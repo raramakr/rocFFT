@@ -33,7 +33,7 @@ else( )
 endif( )
 
 # Workaround for missing llvm cmake files in /opt/rocm/lib/cmake. Remove when this is fixed
-list( APPEND CMAKE_PREFIX_PATH /opt/rocm/llvm /opt/rocm )
+list( APPEND CMAKE_PREFIX_PATH /opt/rocm )
 
 
 # This has to be initialized before the project() command appears

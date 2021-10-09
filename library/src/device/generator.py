@@ -49,7 +49,7 @@ def cjoin(n):
 def format(code):
     """Format code using clang-format."""
     try:
-        p = subprocess.run(['/opt/rocm/llvm/bin/clang-format', '-style=file'],
+        p = subprocess.run(['/opt/rocm/bin/llvm/clang-format', '-style=file'],
                            stdout=subprocess.PIPE,
                            input=str(code),
                            encoding='ascii',
