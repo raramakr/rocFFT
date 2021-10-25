@@ -270,8 +270,7 @@ foreach( sub ${sub_libraries} )
   rocm_install_targets(
     TARGETS
     rocfft-device-${sub}
-    PREFIX
-    rocfft )
+    )
 endforeach()
 
 # misc lib has the function pool which depends on the single/double
