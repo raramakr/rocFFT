@@ -5,7 +5,7 @@
 #pragma once
 #if !defined(_generator_stockham_H)
 #define _generator_stockham_H
-#include "rocfft.h"
+#include "rocfft/rocfft.h"
 #include <assert.h>
 #include <map>
 #include <sstream>

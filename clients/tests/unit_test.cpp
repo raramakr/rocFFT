@@ -22,7 +22,7 @@
 #include "hip/hip_runtime_api.h"
 #include "hip/hip_vector_types.h"
 #include "private.h"
-#include "rocfft.h"
+#include "rocfft/rocfft.h"
 #include <boost/scope_exit.hpp>
 #include <condition_variable>
 #include <fstream>

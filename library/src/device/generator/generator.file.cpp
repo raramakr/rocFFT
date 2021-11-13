@@ -4,7 +4,7 @@
 #include "../../include/plan.h"
 #include "../../include/radix_table.h"
 #include "../../include/tree_node.h"
-#include "rocfft.h"
+#include "rocfft/rocfft.h"
 #include <algorithm>
 #include <fstream>
 #include <iostream>
