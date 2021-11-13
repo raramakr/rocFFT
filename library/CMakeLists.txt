@@ -101,6 +101,9 @@ configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/include/rocfft/rocfft-version.h.in"
 configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/include/rocfft/rocfft.h" "${PROJECT_BINARY_DIR}/include/rocfft/rocfft.h" COPYONLY )
 configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/include/rocfft/hipfft.h" "${PROJECT_BINARY_DIR}/include/rocfft/hipfft.h" COPYONLY )
 
+# Copy rocfft from source dir path to build dir
+configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/include/rocfft.h" "${PROJECT_BINARY_DIR}/include/rocfft.h" COPYONLY )
+
 set( rocfft_headers_public
   include/rocfft/rocfft.h
   include/rocfft/hipfft.h
