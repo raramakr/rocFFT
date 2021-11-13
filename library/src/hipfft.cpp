@@ -23,7 +23,7 @@
 #include "hipfft.h"
 #include "plan.h"
 #include "private.h"
-#include "rocfft.h"
+#include "rocfft/rocfft.h"
 #include "transform.h"
 #include "tree_node.h"
 #include <sstream>

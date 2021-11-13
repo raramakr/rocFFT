@@ -30,7 +30,7 @@
 #include <map>
 #include <vector>
 
-#include "rocfft.h"
+#include "rocfft/rocfft.h"
 
 inline size_t sizeof_precision(rocfft_precision precision)
 {

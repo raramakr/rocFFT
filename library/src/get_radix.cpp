@@ -21,7 +21,7 @@
 *******************************************************************************/
 
 #include "radix_table.h"
-#include "rocfft.h"
+#include "rocfft/rocfft.h"
 #include <stddef.h>
 #include <vector>
 

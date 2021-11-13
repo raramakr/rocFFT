@@ -27,7 +27,7 @@
 #include "radix_table.h"
 #include "repo.h"
 #include "rocfft-version.h"
-#include "rocfft.h"
+#include "rocfft/rocfft.h"
 #include "rocfft_ostream.hpp"
 #include "rtc.h"
 

@@ -127,7 +127,7 @@ if(NOT HIP_PLATFORM STREQUAL "nvcc")
   set_target_properties( rocfft PROPERTIES CXX_VISIBILITY_PRESET "hidden" VISIBILITY_INLINES_HIDDEN ON )
 endif()
 
-generate_export_header( rocfft EXPORT_FILE_NAME ${PROJECT_BINARY_DIR}/include/rocfft-export.h )
+generate_export_header( rocfft EXPORT_FILE_NAME ${PROJECT_BINARY_DIR}/include/rocfft/rocfft-export.h )
 
 # Following Boost conventions of prefixing 'lib' on static built libraries, across all platforms
 if( NOT BUILD_SHARED_LIBS )
@@ -142,7 +142,7 @@ rocm_install_targets(
   )
 
 install(
-  DIRECTORY "${CMAKE_SOURCE_DIR}/library/include/" "${CMAKE_BINARY_DIR}/include/"
+  DIRECTORY "${CMAKE_SOURCE_DIR}/library/include/rocfft/" "${CMAKE_BINARY_DIR}/include/rocfft/"
   DESTINATION include/rocfft
   FILES_MATCHING
   PATTERN "*.h"
@@ -165,6 +165,6 @@ rocm_export_targets(
 # from rocFFT, we can delete this..
 if(NOT CMAKE_HOST_WIN32)
   install(CODE "
-      file(REMOVE \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/include/hipfft.h\")
+      file(REMOVE \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/include/rocfft/hipfft.h\")
     ")
 endif()
