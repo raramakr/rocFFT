@@ -20,7 +20,7 @@
 * THE SOFTWARE.
 *******************************************************************************/
 
-#include "hipfft.h"
+#include "rocfft/hipfft.h"
 #include "plan.h"
 #include "private.h"
 #include "rocfft/rocfft.h"
