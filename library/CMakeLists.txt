@@ -99,6 +99,7 @@ endif( )
 # configure a header file to pass the CMake version settings to the source, and package the header files in the output archive
 configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/include/rocfft/rocfft-version.h.in" "${PROJECT_BINARY_DIR}/include/rocfft/rocfft-version.h" )
 configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/include/rocfft/rocfft.h" "${PROJECT_BINARY_DIR}/include/rocfft/rocfft.h" COPYONLY )
+configure_file( "${CMAKE_CURRENT_SOURCE_DIR}/include/rocfft/hipfft.h" "${PROJECT_BINARY_DIR}/include/rocfft/hipfft.h" COPYONLY )
 
 set( rocfft_headers_public
   include/rocfft/rocfft.h
