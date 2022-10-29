@@ -23,6 +23,7 @@
 
 using namespace std::placeholders;
 
+#include "../../shared/concurrency.h"
 #include "../../shared/environment.h"
 #include "function_pool.h"
 #include "rtc_cache.h"
@@ -151,11 +152,12 @@ void build_stockham_function_pool(CompileQueue& queue)
                     intrinsic_modes.push_back(ENABLE_LOAD_ONLY);
                 }
 
-                // SBCC can be used with or without large twd.  Large
-                // twd may be base 4, 5, 6, 8.  Base 8 can
-                // be 2 or 3 steps; other bases are always 3 step.
+                // SBCC can be used with or without large twd.  Large twd may be
+                // base 4, 5, 6, 8.  Base 4 is unused since it's only useful up
+                // to 4k lengths, which we already have single kernels for.  Base
+                // 8 can be 2 or 3 steps; other bases are always 3 step.
                 static const std::array<size_t, 2> base_steps[]
-                    = {{0, 0}, {4, 3}, {5, 3}, {6, 3}, {8, 2}, {8, 3}};
+                    = {{0, 0}, {5, 3}, {6, 3}, {8, 2}, {8, 3}};
                 for(auto base_step : base_steps)
                 {
                     for(auto intrinsic : intrinsic_modes)
@@ -254,7 +256,7 @@ int main(int argc, char** argv)
 
     CompileQueue queue;
 
-    static const size_t      NUM_THREADS = std::thread::hardware_concurrency();
+    static const size_t      NUM_THREADS = rocfft_concurrency();
     std::vector<std::thread> threads;
     threads.reserve(NUM_THREADS);
     for(size_t i = 0; i < NUM_THREADS; ++i)
